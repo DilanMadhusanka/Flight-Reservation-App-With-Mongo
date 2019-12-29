@@ -6,18 +6,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dilz.flightreservation.Flight.Reservation.Application.entities.User;
-import com.dilz.flightreservation.Flight.Reservation.Application.repository.UserRepository;
+//import com.dilz.flightreservation.Flight.Reservation.Application.repository.UserRepository;
 
 @RestController
 public class UserController {
 	
-	@Autowired
-	UserRepository userRepository;
+//	@Autowired
+//	UserRepository userRepository;
 
 	@RequestMapping("/login")
-	public String saveData(@RequestBody User user) {
-		userRepository.save(new User(user.getFirstName(),user.getLastName(),user.getEmail(),user.getPassword()));
-		return "success";
+	public User saveData(@RequestBody User user) {
+		System.out.println(user);
+		//userRepository.save(new User(user.getId(),user.getFirstName(),user.getLastName(),user.getEmail(),user.getPassword()));
+		return user;
 		
 	}
 }

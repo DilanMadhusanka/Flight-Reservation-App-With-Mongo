@@ -3,8 +3,9 @@ package com.dilz.flightreservation.Flight.Reservation.Application.entities;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class User extends AbstractEntity {
+public class User{
 
+	private Long id;
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -14,12 +15,21 @@ public class User extends AbstractEntity {
 		
 	}
 	
-	public User(String firstName, String lastName, String email, String password) {
+	public User(Long id, String firstName, String lastName, String email, String password) {
 		super();
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getFirstName() {
